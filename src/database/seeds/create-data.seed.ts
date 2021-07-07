@@ -8,7 +8,7 @@ import * as csv from 'csvtojson/v2'
 import { join } from 'path';
 
 
-export default class CreateUsers implements Seeder {
+export default class CreateData implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<any> {
     const fileProvinces = join(__dirname, '../../../csv/provinces.csv');
 

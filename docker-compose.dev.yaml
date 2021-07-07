@@ -22,13 +22,14 @@ services:
     env_file: 
       - .env
     ports:
-      - 5004:3000
+      - 3000:3000
     command: sh -c "yarn start:dev"
     volumes:
-      - ./.:/src/
+      - .:/src
       - dev_indonesia_nodemodules:/src/node_modules
     networks: 
       - frontend
+      - backend
     depends_on: 
       - db
 networks:

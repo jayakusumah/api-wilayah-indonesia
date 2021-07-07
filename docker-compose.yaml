@@ -25,7 +25,7 @@ services:
       - 5004:3000
     command: sh -c "yarn build && yarn start:prod"
     volumes:
-      - ./.:/src/
+      - .:/src/
       - indonesia_nodemodules:/src/node_modules
     networks: 
       - frontend
