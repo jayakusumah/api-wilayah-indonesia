@@ -10,7 +10,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - dev_ind_db_data:/var/lib/postgresql/data
+      - ind_db_data:/var/lib/postgresql/data
     networks:
       - backend
   api:
@@ -23,10 +23,10 @@ services:
       - .env
     ports:
       - 5004:3000
-    command: sh -c "yarn start:dev"
+    command: sh -c "yarn build && yarn start:prod"
     volumes:
       - ./.:/src/
-      - dev_indonesia_nodemodules:/src/node_modules
+      - indonesia_nodemodules:/src/node_modules
     networks: 
       - frontend
     depends_on: 
@@ -38,5 +38,5 @@ networks:
     external:
       name: indonesia_infra
 volumes:
-  dev_ind_db_data: {}
-  dev_indonesia_nodemodules: {}
+  ind_db_data: {}
+  indonesia_nodemodules: {}
