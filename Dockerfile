@@ -2,7 +2,7 @@ FROM mhart/alpine-node:14
 
 WORKDIR /src
 
-COPY package*.json ./
+COPY package.json ./
 
 COPY yarn.lock ./
 
